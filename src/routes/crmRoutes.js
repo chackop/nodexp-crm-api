@@ -15,15 +15,13 @@ const routes = (app) => {
       console.log(`Request type: ${req.method}`);
       next();
     }, getContacts)
-
-    .post(addnewContact);
+    .post(addnewContact); // Post endpoint to insert new
 
   app
     .route('/contact/:contactID')
-    .get(getContactWithID)
-    .put(updateContact)
-
-    .delete(deleteContact);
+    .get(getContactWithID) // get a specific contact
+    .put(updateContact) // updating a specific contact
+    .delete(deleteContact); // deleting a specific contact
 };
 
 export default routes;
